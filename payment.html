@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/public/css/payment.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-left">
+        <img src="/public/images/logo4.png" alt="Website Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN CHECKOUT SECTION -->
+    <main>
+      <div class="checkout-container">
+        <!-- LEFT COLUMN -->
+        <div class="left-section">
+          <!-- DELIVERY ADDRESS -->
+          <section class="delivery-address">
+            <h2>Delivery Address</h2>
+            <div class="address-list">
+              <div class="address-card selected">
+                <input type="radio" id="addr1" name="address" checked />
+                <label for="addr1">
+                  <strong>Sakshi Agrawal</strong><br />
+                  5684745839 <br />
+                  Banasthali Vidyapith, New Shantabai Niveshan Hostel, Room<br />
+                  Niwai, Rajasthan - 304022
+                </label>
+                <button class="edit-address-btn">Edit</button>
+              </div>
+              <div class="address-card">
+                <input type="radio" id="addr2" name="address" />
+                <label for="addr2">
+                  <strong>John Doe</strong><br />
+                  5963247890 <br />
+                  Banasthali Vidyapith, Apurv, Chandrakala Colony, Jaipur<br />
+                  Rajasthan - 302001
+                </label>
+                <button class="edit-address-btn">Edit</button>
+              </div>
+            </div>
+            <button class="edit-address-btn">Add Address</button>
+          </section>
+
+          <!-- ORDER SUMMARY -->
+          <section class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="order-item">
+              <img src="/public/images/redk1.jpg" alt="Product 1" />
+              <div>
+                <p><strong>Product Name 1</strong></p>
+                <p>Qty: 1</p>
+                <p>₹599</p>
+              </div>
+            </div>
+            <div class="order-item">
+              <img src="/public/images/bedsheets1.jpg" alt="Product 2" />
+              <div>
+                <p><strong>Product Name 2</strong></p>
+                <p>Qty: 2</p>
+                <p>₹799 each</p>
+              </div>
+            </div>
+          </section>
+          <script>
+            // Simple JS to show how you might handle clicks
+            const editButtons = document.querySelectorAll(".edit-address-btn");
+            const addAddressBtn = document.querySelector(".add-address-btn");
+
+            // When Edit is clicked, open an 'edit address' form or modal
+            editButtons.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                alert("Open edit address form or modal here...");
+              });
+            });
+
+            // When Add New Address is clicked, open an 'add new address' form or modal
+            addAddressBtn.addEventListener("click", () => {
+              alert("Open add new address form or modal here...");
+            });
+          </script>
+
+          <!-- PAYMENT OPTIONS -->
+          <section class="payment-options">
+            <h2>Payment Options</h2>
+            <div class="payment-method">
+              <input type="radio" id="cod" name="payment" checked />
+              <label for="cod">Cash on Delivery</label>
+            </div>
+            <div class="payment-method">
+              <input type="radio" id="credit" name="payment" />
+              <label for="credit">Credit/Debit Card</label>
+            </div>
+            <div class="payment-method">
+              <input type="radio" id="netbank" name="payment" />
+              <label for="netbank">Net Banking</label>
+            </div>
+            <div class="payment-method">
+              <input type="radio" id="upi" name="payment" />
+              <label for="upi">UPI</label>
+            </div>
+            <button class="confirm-payment-btn">Confirm Payment</button>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN: PRICE DETAILS -->
+        <div class="right-section">
+          <section class="price-details">
+            <h2>Price Details</h2>
+            <div class="price-row">
+              <span>Price (3 items)</span>
+              <span>₹2,197</span>
+            </div>
+            <div class="price-row">
+              <span>Delivery Charges</span>
+              <span>₹49</span>
+            </div>
+            <div class="price-row">
+              <span>Platform Fee</span>
+              <span>₹10</span>
+            </div>
+            <hr />
+            <div class="price-row total">
+              <span>Total Payable</span>
+              <span>₹2,256</span>
+            </div>
+            <p class="savings">Your total savings on this order ₹1,867</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 YourWebsite | All rights reserved</p>
+    </footer>
+
+    <!-- JS (Optional) -->
+    <script>
+      // Additional JavaScript if needed
+    </script>
+  </body>
+</html>

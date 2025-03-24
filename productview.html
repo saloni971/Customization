@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <!-- Link to your external CSS -->
+    <link rel="icon" type="image/x-icon" href="/public/images/logo4.png" />
+    <link rel="stylesheet" href="/public/css/productview.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-left">
+        <img src="/public/images/logo4.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="product-page">
+      <!-- LEFT COLUMN: IMAGES -->
+      <div class="left-column">
+        <!-- Main Product Image -->
+        <div class="image-gallery">
+          <!-- Thumbnails on the left (vertical) -->
+          <div class="thumbnail-container">
+            <img
+              class="thumbnail"
+              src="/public/images/redk1.jpg"
+              alt="Thumb 1"
+              onclick="changeImage(this)"
+            />
+            <img
+              class="thumbnail"
+              src="/public/images/redk2.jpg"
+              alt="Thumb 2"
+              onclick="changeImage(this)"
+            />
+            <img
+              class="thumbnail"
+              src="/public/images/redk3.jpg"
+              alt="Thumb 3"
+              onclick="changeImage(this)"
+            />
+          </div>
+
+          <!-- Main Product Image on the right -->
+          <div class="main-image-container">
+            <img
+              id="main-image"
+              class="main-image"
+              src="/public/images/redk1.jpg"
+              alt="Main Product"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: PRODUCT INFO -->
+      <div class="right-column">
+        <!-- Product Title, Rating, Price -->
+        <h1 class="product-title">
+          Men Regular Fit Grey Cotton Blend Trousers
+        </h1>
+        <div class="rating-section">
+          <span class="rating">4.3 ★</span>
+          <span class="total-ratings"> (7,897 ratings & 496 reviews)</span>
+        </div>
+        <p class="price">₹429 <span class="discount">(66% OFF)</span></p>
+
+        <!-- Size Selection -->
+        <div class="size-section">
+          <label for="size-select"><b>Size:</b></label>
+          <select id="size-select">
+            <option value="28">28</option>
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+          </select>
+        </div>
+
+        <!-- Product Description -->
+        <p class="description">
+          High-quality, comfortable cotton blend trousers perfect for formal and
+          casual wear. Stylish design that fits perfectly with your wardrobe
+          needs.
+        </p>
+
+        <!-- Buttons -->
+        <div class="buttons">
+          <button class="cart-btn">Add to Cart</button>
+          <button class="buy-btn">Buy Now</button>
+          <button class="wishlist-btn">Add to Wishlist</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h3>About</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Corporate Information</a></li>
+          </ul>
+        </div>
+
+        <!-- Help Section -->
+        <div class="footer-section">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#">Payments</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Cancellation & Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Consumer Policy -->
+        <div class="footer-section">
+          <h3>Consumer Policy</h3>
+          <ul>
+            <li><a href="#">Cancellation & Returns</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media & Contact -->
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <h3>Mail Us</h3>
+          <p>KhadiBV Pvt Ltd,India</p>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="bottom-footer">
+        <h3>We Accept</h3>
+        <div class="payment-icons">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Old_Visa_Logo.svg"
+            alt="Visa"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+            alt="MasterCard"
+          />
+          <img
+            src="https://orissadiary.com/wp-content/uploads/2018/01/RuPay-Logo_High-Res.png"
+            alt="RuPay"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/PayPal_logo.svg/2560px-PayPal_logo.svg.png"
+            alt="PayPal"
+          />
+        </div>
+        <p>© ~2025 KhadiBV.in | All rights reserved!!</p>
+      </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+      function changeImage(elem) {
+        document.getElementById("main-image").src = elem.src;
+      }
+    </script>
+  </body>
+</html>
