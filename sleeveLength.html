@@ -86,7 +86,7 @@
         height: 100%;
         background-color: #9c6644;
         border-radius: 3px;
-        width: 45%;
+        width: 30%;
         transition: width 0.3s ease;
       }
 
@@ -94,14 +94,14 @@
         background-color: #9c6644;
       }
 
-      .length-options-container {
+      .sleeve-options-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         margin-top: 40px;
       }
 
-      .length-option-card {
+      .sleeve-option-card {
         background-color: white;
         border-radius: 12px;
         box-shadow: 0 5px 15px rgba(156, 102, 68, 0.1);
@@ -111,16 +111,16 @@
         position: relative;
       }
 
-      .length-option-card:hover {
+      .sleeve-option-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(156, 102, 68, 0.15);
       }
 
-      .length-option-card.selected {
+      .sleeve-option-card.selected {
         box-shadow: 0 0 0 3px #9c6644, 0 8px 25px rgba(156, 102, 68, 0.15);
       }
 
-      .length-option-card.selected::after {
+      .sleeve-option-card.selected::after {
         content: "✓";
         position: absolute;
         top: 10px;
@@ -136,24 +136,24 @@
         font-weight: bold;
       }
 
-      .length-image {
-        height: 280px;
+      .sleeve-image {
+        height: 240px;
         background-size: cover;
         background-position: center;
       }
 
-      .length-content {
+      .sleeve-content {
         padding: 20px;
         text-align: center;
       }
 
-      .length-title {
+      .sleeve-title {
         font-size: 20px;
         margin-bottom: 10px;
         color: #9c6644;
       }
 
-      .length-description {
+      .sleeve-description {
         font-size: 14px;
         color: #7d5a50;
       }
@@ -212,8 +212,10 @@
   <body>
     <div class="container">
       <header>
-        <h1>Choose Your Kurti Length</h1>
-        <p class="subtitle">Select the perfect length to match your style</p>
+        <h1>Choose Your Sleeve Length</h1>
+        <p class="subtitle">
+          Select the sleeve style that best suits your preference
+        </p>
       </header>
 
       <div class="progress-container">
@@ -230,7 +232,7 @@
             <div class="step-circle">3</div>
             <div class="step-label">Sleeve</div>
           </div>
-          <div class="step active">
+          <div class="step">
             <div class="step-circle">4</div>
             <div class="step-label">Length</div>
           </div>
@@ -248,67 +250,67 @@
         </div>
       </div>
 
-      <div class="length-options-container">
+      <div class="sleeve-options-container">
         <div
-          class="length-option-card"
-          data-length="Short"
-          onclick="selectKurtiLength(this)"
+          class="sleeve-option-card"
+          data-sleeve="Full"
+          onclick="selectSleeveLength(this)"
         >
           <div
-            class="length-image"
+            class="sleeve-image"
             style="
-              background-image: url('https://i.pinimg.com/originals/8f/27/9f/8f279fa7170517c0aeb7f72c8b4d52da.png');
+              background-image: url('https://i.pinimg.com/originals/d4/61/55/d46155e0ae1eff523ea2ce8e749d0184.jpg');
             "
           ></div>
-          <div class="length-content">
-            <h3 class="length-title">Short Length</h3>
-            <p class="length-description">
-              Hip-length kurti perfect for a modern, casual look.
+          <div class="sleeve-content">
+            <h3 class="sleeve-title">Full Sleeve</h3>
+            <p class="sleeve-description">
+              Classic full-length sleeves for traditional elegance and modesty.
             </p>
           </div>
         </div>
 
         <div
-          class="length-option-card"
-          data-length="Medium"
-          onclick="selectKurtiLength(this)"
+          class="sleeve-option-card"
+          data-sleeve="Half"
+          onclick="selectSleeveLength(this)"
         >
           <div
-            class="length-image"
+            class="sleeve-image"
             style="
-              background-image: url('https://i.pinimg.com/originals/c4/ba/6f/c4ba6f43a9e2979be826c2a52bfc5d51.jpg');
+              background-image: url('https://tse4.mm.bing.net/th/id/OIP.zxqdsBpTAGBcDYJVTSEO4AAAAA?rs=1&pid=ImgDetMain');
             "
           ></div>
-          <div class="length-content">
-            <h3 class="length-title">Medium Length</h3>
-            <p class="length-description">
-              Mid-thigh length for a balanced, versatile style.
+          <div class="sleeve-content">
+            <h3 class="sleeve-title">Half Sleeve</h3>
+            <p class="sleeve-description">
+              Perfect balance between comfort and coverage.
             </p>
           </div>
         </div>
 
         <div
-          class="length-option-card"
-          data-length="Long"
-          onclick="selectKurtiLength(this)"
+          class="sleeve-option-card"
+          data-sleeve="Sleeveless"
+          onclick="selectSleeveLength(this)"
         >
           <div
-            class="length-image"
+            class="sleeve-image"
             style="
-              background-image: url('https://tse4.mm.bing.net/th/id/OIP.esL_JrXxUh2-7VkCZMKqyAHaI2?rs=1&pid=ImgDetMain');
+              background-image: url('https://tse1.mm.bing.net/th/id/OIP.O0U_Y6xjRin4jt2MzzQeIQHaHa?rs=1&pid=ImgDetMain');
             "
           ></div>
-          <div class="length-content">
-            <h3 class="length-title">Long Length</h3>
-            <p class="length-description">
-              Knee-length or longer for traditional elegance.
+          <div class="sleeve-content">
+            <h3 class="sleeve-title">Sleeveless</h3>
+            <p class="sleeve-description">
+              Modern, airy design perfect for warm weather.
             </p>
           </div>
         </div>
       </div>
 
       <div class="navigation-buttons">
-        <a href="/sleeveLength.html" class="btn btn-secondary">Back</a>
+        <a href="/neck.html" class="btn btn-secondary">Back</a>
         <button
           id="nextButton"
           class="btn btn-disabled"
@@ -351,11 +353,11 @@
         };
       }
 
-      // If there's a saved kurti length, pre-select it
-      if (customizationData.kurtiLength) {
-        const cards = document.querySelectorAll(".length-option-card");
+      // If there's a saved sleeve length, pre-select it
+      if (customizationData.sleeveLength) {
+        const cards = document.querySelectorAll(".sleeve-option-card");
         cards.forEach((card) => {
-          if (card.dataset.length === customizationData.kurtiLength) {
+          if (card.dataset.sleeve === customizationData.sleeveLength) {
             card.classList.add("selected");
             document.getElementById("nextButton").disabled = false;
             document
@@ -365,17 +367,17 @@
         });
       }
 
-      // Handle kurti length selection
-      function selectKurtiLength(element) {
+      // Handle sleeve length selection
+      function selectSleeveLength(element) {
         // Clear previous selection
-        const cards = document.querySelectorAll(".length-option-card");
+        const cards = document.querySelectorAll(".sleeve-option-card");
         cards.forEach((card) => card.classList.remove("selected"));
 
         // Add selected class to clicked element
         element.classList.add("selected");
 
         // Save selection to customization data
-        customizationData.kurtiLength = element.dataset.length;
+        customizationData.sleeveLength = element.dataset.sleeve;
         localStorage.setItem(
           "kurtiCustomization",
           JSON.stringify(customizationData)
@@ -389,19 +391,19 @@
       // Go to next step in customization
       function goToNextStep() {
         // Animation for progress bar
-        document.querySelector(".progress-completed").style.width = "60%";
+        document.querySelector(".progress-completed").style.width = "45%";
 
-        // Navigate to color selection page
+        // Navigate to length selection page
         setTimeout(() => {
-          window.location.href = "/color.html";
+          window.location.href = "/selectLen.html";
         }, 500);
       }
 
       // Update progress bar on page load
       document.addEventListener("DOMContentLoaded", function () {
-        document.querySelector(".progress-completed").style.width = "45%";
+        document.querySelector(".progress-completed").style.width = "30%";
         setTimeout(() => {
-          document.querySelector(".progress-completed").style.width = "60%";
+          document.querySelector(".progress-completed").style.width = "45%";
         }, 300);
       });
     </script>

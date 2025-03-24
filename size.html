@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adjust Design | Kurti Customization</title>
+    <title>Size Selection</title>
     <link rel="icon" type="image/x-icon" href="/public/images/logo4.png" />
     <style>
       body {
@@ -20,6 +20,7 @@
         padding: 20px;
       }
 
+      /* Reusing styles from previous pages */
       header {
         text-align: center;
         padding: 40px 0;
@@ -86,7 +87,7 @@
         height: 100%;
         background-color: #9c6644;
         border-radius: 3px;
-        width: 30%;
+        width: 60%;
         transition: width 0.3s ease;
       }
 
@@ -94,7 +95,7 @@
         background-color: #9c6644;
       }
 
-      .design-adjustment-container {
+      .size-selection-container {
         background-color: white;
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(156, 102, 68, 0.1);
@@ -102,24 +103,51 @@
         margin-top: 30px;
       }
 
-      .design-preview {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
+      .size-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
       }
 
-      .design-preview img {
-        max-width: 400px;
-        max-height: 400px;
+      .size-card {
+        border: 2px solid #e0d4c8;
         border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
       }
 
-      .adjustment-controls {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+      .size-card:hover,
+      .size-card.selected {
+        border-color: #9c6644;
+        box-shadow: 0 4px 10px rgba(156, 102, 68, 0.2);
       }
 
+      .sleeve-length-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .neck-design-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .size-card h3 {
+        margin: 10px 0;
+        color: #7d5a50;
+      }
+
+      .size-details {
+        font-size: 14px;
+        color: #9c6644;
+        margin-top: 10px;
+      }
       .btn {
         display: inline-block;
         padding: 12px 30px;
@@ -149,21 +177,6 @@
         color: white;
       }
 
-      .slider-container {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-
-      .slider-container label {
-        margin-right: 15px;
-        color: #7d5a50;
-      }
-
-      .slider {
-        flex-grow: 1;
-      }
-
       footer {
         margin-top: 60px;
         text-align: center;
@@ -176,10 +189,8 @@
   <body>
     <div class="container">
       <header>
-        <h1>Adjust Your Design</h1>
-        <p class="subtitle">
-          Fine-tune the placement and scale of your custom design
-        </p>
+        <h1>Customize Your Kurti</h1>
+        <p class="subtitle">Select your size, sleeve length, and neck design</p>
       </header>
 
       <div class="progress-container">
@@ -192,11 +203,11 @@
             <div class="step-circle">2</div>
             <div class="step-label">Adjust</div>
           </div>
-          <div class="step">
+          <div class="step active">
             <div class="step-circle">3</div>
             <div class="step-label">Fabric</div>
           </div>
-          <div class="step">
+          <div class="step active">
             <div class="step-circle">4</div>
             <div class="step-label">Size</div>
           </div>
@@ -214,42 +225,65 @@
         </div>
       </div>
 
-      <div class="design-adjustment-container">
-        <div class="design-preview">
-          <img id="designPreview" src="" alt="Design Preview" />
-        </div>
-
-        <div class="adjustment-controls">
-          <div class="slider-container">
-            <label for="scaleSlider">Scale</label>
-            <input
-              type="range"
-              id="scaleSlider"
-              class="slider"
-              min="10"
-              max="200"
-              value="100"
-            />
+      <div class="size-selection-container">
+        <h2>Choose Your Kurti Size</h2>
+        <div class="size-grid">
+          <div class="size-card" data-size="XS">
+            <h3>XS</h3>
+            <div class="size-details">32-34 inches</div>
           </div>
-          <div class="slider-container">
-            <label for="rotateSlider">Rotate</label>
-            <input
-              type="range"
-              id="rotateSlider"
-              class="slider"
-              min="0"
-              max="360"
-              value="0"
-            />
+          <div class="size-card" data-size="S">
+            <h3>S</h3>
+            <div class="size-details">36-38 inches</div>
+          </div>
+          <div class="size-card" data-size="M">
+            <h3>M</h3>
+            <div class="size-details">40-42 inches</div>
+          </div>
+          <div class="size-card" data-size="L">
+            <h3>L</h3>
+            <div class="size-details">44-46 inches</div>
           </div>
         </div>
 
-        <div style="text-align: center">
+        <h2 style="margin-top: 30px">Sleeve Length</h2>
+        <div class="sleeve-length-grid">
+          <div class="size-card" data-sleeve-length="Short">
+            <h3>Short</h3>
+            <div class="size-details">Above Elbow</div>
+          </div>
+          <div class="size-card" data-sleeve-length="Three-Quarter">
+            <h3>Three-Quarter</h3>
+            <div class="size-details">Elbow Length</div>
+          </div>
+          <div class="size-card" data-sleeve-length="Full">
+            <h3>Full</h3>
+            <div class="size-details">Wrist Length</div>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 30px">Neck Design</h2>
+        <div class="neck-design-grid">
+          <div class="size-card" data-neck-design="Round">
+            <h3>Round</h3>
+            <div class="size-details">Classic & Comfortable</div>
+          </div>
+          <div class="size-card" data-neck-design="V-Neck">
+            <h3>V-Neck</h3>
+            <div class="size-details">Elegant & Flattering</div>
+          </div>
+          <div class="size-card" data-neck-design="Boat">
+            <h3>Boat Neck</h3>
+            <div class="size-details">Modern & Stylish</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px">
           <button class="btn" onclick="proceedToNextStep()">
-            Next: Choose Fabric
+            Next: Review Design
           </button>
           <button class="btn btn-outline" onclick="goBack()">
-            Back to Upload
+            Back to Fabric Selection
           </button>
         </div>
       </div>
@@ -266,49 +300,50 @@
         neckDesign: "",
         sleeveLength: "",
         kurtiLength: "",
-        fabricType: "Khadi",
+        fabricType: "",
         color: "",
+        size: "",
         customImage: null,
       };
 
-      // Load the uploaded image
       document.addEventListener("DOMContentLoaded", () => {
-        const designPreview = document.getElementById("designPreview");
-        const scaleSlider = document.getElementById("scaleSlider");
-        const rotateSlider = document.getElementById("rotateSlider");
+        const sizeCards = document.querySelectorAll(".size-card");
 
-        if (customizationData.customImage) {
-          designPreview.src = customizationData.customImage.dataUrl;
-        }
+        // Size selection
+        sizeCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            const cardGroup =
+              card.closest(".size-grid") ||
+              card.closest(".sleeve-length-grid") ||
+              card.closest(".neck-design-grid");
 
-        // Scale functionality
-        scaleSlider.addEventListener("input", (e) => {
-          const scale = e.target.value / 100;
-          designPreview.style.transform = `scale(${scale}) rotate(${rotateSlider.value}deg)`;
-          customizationData.designScale = scale;
-          saveCustomizationData();
-        });
+            cardGroup
+              .querySelectorAll(".size-card")
+              .forEach((c) => c.classList.remove("selected"));
+            card.classList.add("selected");
 
-        // Rotate functionality
-        rotateSlider.addEventListener("input", (e) => {
-          const rotation = e.target.value;
-          designPreview.style.transform = `scale(${
-            scaleSlider.value / 100
-          }) rotate(${rotation}deg)`;
-          customizationData.designRotation = rotation;
-          saveCustomizationData();
+            if (cardGroup.classList.contains("size-grid")) {
+              customizationData.size = card.dataset.size;
+            } else if (cardGroup.classList.contains("sleeve-length-grid")) {
+              customizationData.sleeveLength = card.dataset.sleeveLength;
+            } else if (cardGroup.classList.contains("neck-design-grid")) {
+              customizationData.neckDesign = card.dataset.neckDesign;
+            }
+
+            saveCustomizationData();
+          });
         });
       });
 
       function proceedToNextStep() {
-        document.querySelector(".progress-completed").style.width = "45%";
+        document.querySelector(".progress-completed").style.width = "75%";
         setTimeout(() => {
-          window.location.href = "/fabric.html";
+          window.location.href = "/reviewupload.html";
         }, 500);
       }
 
       function goBack() {
-        window.location.href = "/upload.html";
+        window.location.href = "/fabric.html";
       }
 
       function saveCustomizationData() {
