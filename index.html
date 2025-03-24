@@ -215,7 +215,7 @@
             <p class="card-description">
               Begin your customization journey with a few simple steps.
             </p>
-            <a href="/neck.html" class="btn" onclick="startCustomization()"
+            <a href="neck.html" class="btn" onclick="startCustomization()"
               >Get Started</a
             >
           </div>
@@ -233,7 +233,7 @@
             <p class="card-description">
               Already have a design in mind? Upload your own pattern.
             </p>
-            <a href="/upload.html" class="btn" onclick="goToUpload()"
+            <a href="upload.html" class="btn" onclick="goToUpload()"
               >Upload Design</a
             >
           </div>
@@ -251,7 +251,7 @@
             <p class="card-description">
               Explore our gallery for design inspiration.
             </p>
-            <a href="/imageGallery.html" class="btn" onclick="viewInspiration()"
+            <a href="imageGallery.html" class="btn" onclick="viewInspiration()"
               >View Gallery</a
             >
           </div>
@@ -302,7 +302,7 @@
         // Prevent default link behavior and use JavaScript navigation
         event.preventDefault();
         setTimeout(() => {
-          window.location.href = "/neck.html";
+          window.location.href = "neck.html";
         }, 500);
       }
 
@@ -310,13 +310,13 @@
         event.preventDefault();
         document.querySelector(".progress-completed").style.width = "15%";
         setTimeout(() => {
-          window.location.href = "/upload.html";
+          window.location.href = "upload.html";
         }, 500);
       }
 
       function viewInspiration() {
         event.preventDefault();
-        window.location.href = "/imageGallery.html";
+        window.location.href = "imageGallery.html";
       }
     </script>
   </body>
